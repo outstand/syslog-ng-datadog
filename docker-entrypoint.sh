@@ -17,6 +17,7 @@ CA_BASE=/etc/ssl/certs/ca-certificates.crt.rancher
 CA=/etc/ssl/certs/ca-certificates.crt
 
 if [[ -e ${CA_BASE} && ! -e ${CA} ]]; then
+  echo "Replacing ca-certificates.crt with ca-certificates.crt.rancher"
   cp $CA_BASE $CA
 fi
 
