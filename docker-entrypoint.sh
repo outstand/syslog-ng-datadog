@@ -26,7 +26,7 @@ if [[ -n "${COLOR:-}" ]]; then
 fi
 
 cat > /etc/syslog-ng/conf.d/datadog.conf <<EOM
-template DatadogFormat { template("${API_KEY} <\${PRI}>1 \${ISODATE} \${HOST:--} \${PROGRAM:--} \${PID:--} \${MSGID:--} \${SDATA:--} ${meta}\$MSG\\n"); };
+template DatadogFormat { template("${API_KEY} <\${PRI}>1 \${ISODATE} \${HOST:--} \${PROGRAM:--} \${PID:--} \${MSGID:--} \${SDATA:--} ${meta:-}\$MSG\\n"); };
 destination d_datadog { tcp("intake.logs.datadoghq.com" port(10516) tls(peer-verify(required-trusted)) template(DatadogFormat)); };
 log { source(s_sys); destination(d_datadog); };
 EOM
