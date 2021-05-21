@@ -1,0 +1,6 @@
+file:
+  /etc/syslog-ng/conf.d/datadog.conf:
+    exists: true
+    contains:
+      - '\${ISODATE}'
+      - '[metas@0 ddtags=\"color:green\"]'
