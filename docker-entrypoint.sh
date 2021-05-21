@@ -22,7 +22,7 @@ if [[ -e ${CA_BASE} && ! -e ${CA} ]]; then
 fi
 
 if [[ -n "${COLOR:-}" ]]; then
-  meta="[metas@0 ddtags=\"color:${COLOR}\"] "
+  meta="[metas@0 ddtags=\\\"color:${COLOR}\\\"] "
 fi
 
 cat > /etc/syslog-ng/conf.d/datadog.conf <<EOM
