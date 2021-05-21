@@ -3,4 +3,4 @@ file:
     exists: true
     contains:
       - '\${ISODATE}'
-      - '[metas@0 ddsource=\"syslog_ng\" ddtags=\"color:green\"]'
+      - '[metas@0 ddtags=\"color:green\"]'
